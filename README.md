@@ -56,14 +56,14 @@ using DynamicPolynomials
 f=x[1]^2+0.5*x[1]*x[2]+x[2]^2 # the objective polynomial to minimize
 
 g=[1.0-sum(x.^2)] # the inequality constraints
-h=[x[1]+x[2]] # the equality constraints
+h=[x[1]+x[2]-0.5] # the equality constraints
 
 k=2 # relaxation order
 
 using ctpNCPOP
 
 # get information from the input data f,gi,hj
-n,m,l,lmon_g,supp_g,coe_g,lmon_h,supp_h,coe_h,lmon_f,supp_f,coe_f,dg,dh=ctpNCPOP.get_info(x,f,g,h);
+n,m,l,lmon_g,supp_g,coe_g,lmon_h,supp_h,coe_h,lmon_f,supp_f,coe_f,dg,dh=ctpNCPOP.get_info(x,f,g,h)
 
 # get the optimal value of the Moment-SOS relaxation of order k
 opt_val=ctpNCPOP.POP_dense_CGAL(  n, # the number of variables
