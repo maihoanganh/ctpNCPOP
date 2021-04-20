@@ -106,8 +106,4 @@ ctpNCPOP.test_dense_POP_box(10,30,2,have_eqcons=true) # Table 2
 
 ctpNCPOP.test_CS_POP_ball(1000,10,20,2,have_eqcons=true) # Table 3
 
-
-
 ```
-# ctpNCPOP
-# ctpNCPOP
