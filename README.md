@@ -32,9 +32,9 @@ ctpNCPOP has been implemented on a desktop compute with the following softwares:
 The following sofware is used for comparison purposes:
 - [Mosek 9.1](https://www.mosek.com)
 
-Before installing ctpNCPOP, you should install [TSSOS](https://github.com/wangjie212/TSSOS) with the following commands:
+Before installing ctpNCPOP, you should install [TSSOS](https://github.com/wangjie212/NCTSSOS) with the following commands:
 ```ruby
-Pkg> add https://github.com/wangjie212/TSSOS
+Pkg> add https://github.com/wangjie212/NCTSSOS
 ```
 
 # Installation
