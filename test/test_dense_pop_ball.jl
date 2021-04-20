@@ -1,4 +1,4 @@
-function run_dense_POP(x::Vector{PolyVar{true}},f::Polynomial{true,Float64},g::Vector{Polynomial{true,Float64}},h::Vector{Polynomial{true,Float64}},k::Int64)
+function run_dense_POP(x::Vector{PolyVar{false}},f::Polynomial{false,Float64},g::Vector{Polynomial{false,Float64}},h::Vector{Polynomial{false,Float64}},k::Int64)
     
     println("Time to get information:")
     @time n,m,l,lmon_g,supp_g,coe_g,lmon_h,supp_h,coe_h,lmon_f,supp_f,coe_f,dg,dh=ctpNCPOP.get_info(x,f,g,h);
