@@ -1,7 +1,7 @@
 # ctpNCPOP
 - ctpNCPOP is a Julia package of solving noncommutative polynomial optimization problem (NCPOP):
 
-**inf_{x in R^n} { f(x) : gi(x) = 0, hj(x) = 0 },**
+**𝜆_min=inf_{A in S^n} { v*f(A)v : gj(A) >= 0, hj(A) = 0, |v|=1 },**
 
 with some special cases of inequality constraints **gi**:
 
