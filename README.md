@@ -1,5 +1,5 @@
 # ctpNCPOP
-- ctpNCPOP is a Julia package of solving noncommutative polynomial optimization problem (NCPOP). For instance, consider eigenvalue minimization on the set of tuples of symmetric matrices:
+- ctpNCPOP is a Julia package to solve noncommutative polynomial optimization problem (NCPOP), in particular eigenvalue minimization over tuples of symmetric matrices:
 
 **𝜆_min = inf_{A in S^n} { v*f(A)v : gi(A) >= 0, hj(A) = 0, |v|=1 },**
 
@@ -7,29 +7,29 @@ with some special cases of inequality constraints **gi**:
 
 Case 1: Annulus constraints on subsets of variables: **Ui >= ||x(Ti)||^2 >= Li**.
 
-Case 2: Simlex constraints: **xi >= 0, 1 - x1 -...- xn >= 0**.
+Case 2: Simplex constraints: **xi >= 0, 1 - x1 -...- xn >= 0**.
 
-- The main idea of ctpNCPOP is to solve the Moment-SOS relaxation of the form:
+- The main ingredient of ctpNCPOP is to solve Moment-SOS (semidefinite) relaxations of the form:
 
-**v = inf_X { <C,X> : X is psd, AX = b },**
+**v = inf_X { <C,X> : X is positive semidefinite, AX = b },**
 
-which has constant trace property (CTP):
+such that the constant trace property (CTP) holds:
 
 **AX = b => trace(X) = a,**
 
 by using Conditional gradient-based augmented Lagrangian (CGAL).
 
-- Although possibly slower than the other method on the sparse NCPOPs, ctpNCPOP is much more robust on the dense ones.
+- Although possibly slower than the classical interior-point method on sparse problems, ctpNCPOP is more efficent on the dense ones.
 
-- ctpNCPOP combines CTP with term sparity (TS), correlative sparsity (CS) and correlative sparsity-term sparsity (CS-TS) to avoid memory issue of the large-scale SDP relaxations for NCPOPs.
+- ctpNCPOP can combine CTP with correlative sparsity (CS), term sparsity (TS) and their combination (CS-TS) to overcome memory issues encountered when considering semidefinite relaxations of large-scale problems with sparse data.
 
 
 # Required softwares
-ctpNCPOP has been implemented on a desktop compute with the following softwares:
+ctpNCPOP has been tested with the following software:
 - Ubuntu 18.04.4
 - Julia 1.3.1
 
-The following sofware is used for comparison purposes:
+The following interior-point semidefinite solver is used for comparison purposes:
 - [Mosek 9.1](https://www.mosek.com)
 
 Before installing ctpNCPOP, you should install [TSSOS](https://github.com/wangjie212/NCTSSOS) with the following commands:
@@ -44,7 +44,7 @@ Pkg> add https://github.com/maihoanganh/ctpNCPOP.git
 ```
 
 # Usage
-The following examples briefly guide to use ctpNCPOP:
+The following examples briefly guides you to use ctpNCPOP:
 
 ## Noncommutative polynomial optimization
 Consider the following NCPOP on the unit ball:
@@ -87,7 +87,7 @@ opt_val=ctpNCPOP.POP_dense_CGAL(  n, # the number of variables
                                 check_tol_each_iter=true ) # check the tolerance at each iteration
 ```
 
-See other examples in the [link](https://github.com/maihoanganh/ctpNCPOP/tree/main/examples).
+See other examples in this [link](https://github.com/maihoanganh/ctpNCPOP/tree/main/examples).
 
 
 # References
@@ -95,7 +95,7 @@ For more details, please refer to:
 
 **N. H. A. Mai, A. Bhardwaj, V. Magron. The Constant Trace Property in Noncommutative Optimization, 2021. Forthcoming.**
 
-The following codes are to run the paper's benchmarks:
+The following codes allow one to run the paper's benchmarks:
 ```ruby
 using ctpNCPOP
 
