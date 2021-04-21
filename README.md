@@ -1,7 +1,7 @@
 # ctpNCPOP
-- ctpNCPOP is a Julia package of solving noncommutative polynomial optimization problem (NCPOP). For instance, consider eigenvalue minimization:
+- ctpNCPOP is a Julia package of solving noncommutative polynomial optimization problem (NCPOP). For instance, consider eigenvalue minimization on the set of tuples of symmetric matrices:
 
-**𝜆_min=inf_{A in S^n} { v*f(A)v : gj(A) >= 0, hj(A) = 0, |v|=1 },**
+**𝜆_min=inf_{A in S^n} { v*f(A)v : gi(A) >= 0, hj(A) = 0, |v|=1 },**
 
 with some special cases of inequality constraints **gi**:
 
