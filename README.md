@@ -44,7 +44,7 @@ Pkg> add https://github.com/maihoanganh/ctpNCPOP.git
 ```
 
 # Usage
-The following examples briefly guides you to use ctpNCPOP:
+The following examples briefly guide you to use ctpNCPOP:
 
 ## Noncommutative polynomial optimization
 Consider the following NCPOP on the unit ball:
